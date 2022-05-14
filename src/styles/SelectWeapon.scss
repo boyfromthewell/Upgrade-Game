@@ -1,0 +1,27 @@
+
+.select-weapon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: RGB(0, 0, 0, 0.6);
+    border-radius: 20px;
+    border: 2px solid #767676;
+    width: 80%;
+    height: 400px;
+    margin: 5%;
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+        border: 3px solid #80715e;
+    }
+    p{
+        font-size: 25px;
+        margin-top: 0;
+        color:#c1bfaf;
+    }
+}
+.image-container{
+    display: flex;
+    justify-content: space-around;
+}

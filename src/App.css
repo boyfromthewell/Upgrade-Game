@@ -1,3 +1,14 @@
+body {
+  height: 100vh;
+  background-image: url("./images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+audio{
+  display: flex;
+  margin-left: auto;
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +43,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

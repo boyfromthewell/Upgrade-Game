@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import PlayGame from "./components/PlayGame";
+import SelectWeapon from "./components/SelectWeapon";
+import Ranking from "./components/Ranking";
+import ReactAudioPlayer from "react-audio-player";
+import BGM from "./BGM/elven_guard_old.ogg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ReactAudioPlayer src={BGM} controls autoPlay={true} loop={true} />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/select-weapon" element={<SelectWeapon />} />
+          <Route path="/play" element={<PlayGame />} />
+          <Route path="/ranking" element={<Ranking />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
