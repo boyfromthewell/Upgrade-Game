@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/boyfromthewell.github.io/Upgrade-Game/static/css/main.f05b6f36.css",
+    "main.js": "/boyfromthewell.github.io/Upgrade-Game/static/js/main.ffc113a8.js",
+    "static/media/elven_guard_old.ogg": "/boyfromthewell.github.io/Upgrade-Game/static/media/elven_guard_old.2922de9f9c3502f62c83.ogg",
+    "static/media/background.png": "/boyfromthewell.github.io/Upgrade-Game/static/media/background.94971a87fb143e7c594c.png",
+    "index.html": "/boyfromthewell.github.io/Upgrade-Game/index.html",
+    "main.f05b6f36.css.map": "/boyfromthewell.github.io/Upgrade-Game/static/css/main.f05b6f36.css.map",
+    "main.ffc113a8.js.map": "/boyfromthewell.github.io/Upgrade-Game/static/js/main.ffc113a8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f05b6f36.css",
+    "static/js/main.ffc113a8.js"
+  ]
+}
