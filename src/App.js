@@ -10,7 +10,7 @@ import BGM from "./BGM/elven_guard_old.ogg";
 function App() {
   return (
     <>
-      <ReactAudioPlayer src={BGM} controls autoPlay={true} loop={true} />
+      <ReactAudioPlayer src={BGM} autoPlay={true} controls loop={true} />
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />

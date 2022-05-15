@@ -10,6 +10,7 @@ function Home() {
       <div className="home-container">
         <label>닉네임을 입력하세요</label>
         <input
+          required
           type="text"
           maxLength="30"
           onChange={(e) => {
