@@ -10,7 +10,6 @@ import Weapon6 from "../images/weapon6.png";
 
 function SelectWeapon() {
   let { state } = useLocation();
-  console.log(state.userNickName);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>

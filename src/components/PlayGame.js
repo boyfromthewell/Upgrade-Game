@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "../styles/PlayGame.scss";
 import Loading from "../images/upgrading.gif";
+import { db } from "../firebase.js";
+import { collection, addDoc } from "firebase/firestore";
 
 function PlayGame() {
   let { state } = useLocation();
 
-  let [upgradeRank, setUpgradeRank] = useState(0);
+  const userCollectionRef = collection(db, "ranking");
+
+  let [upgradeRank, setUpgradeRank] = useState(17);
 
   let [mouseOver, setMouseOver] = useState(false);
   let [loading, setLoading] = useState(false);
 
-  console.log(state);
   const upgradePercent = [
     100, 100, 100, 100, 80, 70, 60, 50, 40, 30, 25, 15, 14, 13, 12, 7, 5, 4, 3,
     2, 1,
@@ -25,24 +28,50 @@ function PlayGame() {
     setLoading(true);
     setTimeout(() => {
       let random_num = Math.floor(Math.random() * 101);
-
+      setLoading(false);
       if (random_num >= upgradePercent[upgradeRank] && upgradeRank >= 12) {
         setUpgradeRank(upgradeRank - 1);
         alert("강화 실패 (강화 수치가 한단계 내려갑니다)");
-        setLoading(false);
+
         return;
       }
       if (random_num <= upgradePercent[upgradeRank]) {
         setUpgradeRank(upgradeRank + 1);
         alert("강화 성공");
-        setLoading(false);
+
         return;
       } else {
         alert("강화 실패");
-        setLoading(false);
+
         return;
       }
     }, 2000);
+  };
+
+  const addRanking = async () => {
+    if (
+      window.confirm(
+        "현재 랭킹을 등록 하시겠습니까?\n닉네임 : " +
+          state.userNickName +
+          "\n" +
+          "강화 등급 : " +
+          upgradeRank +
+          "강\n "
+      )
+    ) {
+      try {
+        const res = await addDoc(userCollectionRef, {
+          NickName: state.userNickName,
+          Ranking: upgradeRank,
+          Date: Date.now(),
+        });
+        alert("랭킹 등록 완료");
+      } catch (e) {
+        console.log("error", e);
+      }
+    } else {
+      return false;
+    }
   };
   return (
     <>
@@ -68,17 +97,17 @@ function PlayGame() {
               </span>
               강
             </div>
-            {upgradeRank >= 12 ? (
+            {upgradeRank >= 15 ? (
               <span style={{ marginTop: 15, color: "gray" }}>
                 실패시 강화 수치가 한단계 내려갑니다.
               </span>
             ) : null}
             <button className="upgrade-btn" onClick={upgradeBtn}>
-              강화하기
+              강화 하기
             </button>
           </div>
           <div className="ranking-area">
-            <button>랭킹 등록</button>
+            <button onClick={addRanking}>랭킹 등록</button>
             <Link to="/ranking">랭킹 보기</Link>
           </div>
         </div>
