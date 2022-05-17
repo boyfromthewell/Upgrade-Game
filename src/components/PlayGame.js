@@ -10,7 +10,7 @@ function PlayGame() {
 
   const userCollectionRef = collection(db, "ranking");
 
-  let [upgradeRank, setUpgradeRank] = useState(17);
+  let [upgradeRank, setUpgradeRank] = useState(4);
 
   let [mouseOver, setMouseOver] = useState(false);
   let [loading, setLoading] = useState(false);
