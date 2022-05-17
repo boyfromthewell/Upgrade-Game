@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Upgrade-Game/static/css/main.017de631.css",
-    "main.js": "/Upgrade-Game/static/js/main.b6b5ea1e.js",
+    "main.js": "/Upgrade-Game/static/js/main.add617d9.js",
     "static/media/elven_guard_old.ogg": "/Upgrade-Game/static/media/elven_guard_old.2922de9f9c3502f62c83.ogg",
     "static/media/upgrading.gif": "/Upgrade-Game/static/media/upgrading.c76e7275a0215b9cc5c6.gif",
     "static/media/background.png": "/Upgrade-Game/static/media/background.94971a87fb143e7c594c.png",
     "index.html": "/Upgrade-Game/index.html",
     "main.017de631.css.map": "/Upgrade-Game/static/css/main.017de631.css.map",
-    "main.b6b5ea1e.js.map": "/Upgrade-Game/static/js/main.b6b5ea1e.js.map"
+    "main.add617d9.js.map": "/Upgrade-Game/static/js/main.add617d9.js.map"
   },
   "entrypoints": [
     "static/css/main.017de631.css",
-    "static/js/main.b6b5ea1e.js"
+    "static/js/main.add617d9.js"
   ]
 }
