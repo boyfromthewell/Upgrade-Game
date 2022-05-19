@@ -29,7 +29,7 @@ function PlayGame() {
     setTimeout(() => {
       let random_num = Math.floor(Math.random() * 101);
       setLoading(false);
-      if (random_num >= upgradePercent[upgradeRank] && upgradeRank >= 12) {
+      if (random_num >= upgradePercent[upgradeRank] && upgradeRank >= 15) {
         setUpgradeRank(upgradeRank - 1);
         alert("강화 실패 (강화 수치가 한단계 내려갑니다)");
 
