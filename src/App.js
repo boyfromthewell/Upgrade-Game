@@ -6,19 +6,23 @@ import SelectWeapon from "./components/SelectWeapon";
 import Ranking from "./components/Ranking";
 import ReactAudioPlayer from "react-audio-player";
 import BGM from "./BGM/elven_guard_old.ogg";
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 function App() {
   return (
     <>
       <ReactAudioPlayer src={BGM} autoPlay={true} controls loop={true} />
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/select-weapon" element={<SelectWeapon />} />
-          <Route path="/play" element={<PlayGame />} />
-          <Route path="/ranking" element={<Ranking />} />
-        </Routes>
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/select-weapon" element={<SelectWeapon />} />
+            <Route path="/play" element={<PlayGame />} />
+            <Route path="/ranking" element={<Ranking />} />
+          </Routes>
+        </div>
+      </Provider>
     </>
   );
 }

@@ -20,7 +20,7 @@
         font-size: 25px;
         color: #c1bfaf;
         font-weight: bold;
-        
+
     }
 
     input {
@@ -28,17 +28,15 @@
         height: 40px;
         font-size: 25px;
         color: #c1bfaf;
-        border: 2px solid #c1bfaf;;
+        border: 2px solid #c1bfaf;
+        ;
         background-color: RGB(11, 7, 4, 0.6);
         border-radius: 3px;
         outline: none;
     }
 
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
+    button {
+
         font-size: 23px;
         width: 50%;
         height: 50px;
@@ -46,7 +44,8 @@
         background-color: #2268ad;
         color: #c1bfaf;
         border-radius: 5px;
-        border: 2px solid #6d5c47;;
+        border: 2px solid #6d5c47;
+        ;
         cursor: pointer;
     }
 }

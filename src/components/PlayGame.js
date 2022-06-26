@@ -4,16 +4,21 @@ import "../styles/PlayGame.scss";
 import Loading from "../images/upgrading.gif";
 import { db } from "../firebase.js";
 import { collection, addDoc } from "firebase/firestore";
+import { useSelector, useDispatch } from "react-redux";
+import { UPGRADE_SUCCESS, UPGRADE_FAIL } from "../reducers/infoSlice";
 
 function PlayGame() {
   let { state } = useLocation();
 
   const userCollectionRef = collection(db, "ranking");
 
-  let [upgradeRank, setUpgradeRank] = useState(0);
-
   let [mouseOver, setMouseOver] = useState(false);
   let [loading, setLoading] = useState(false);
+
+  const rank = useSelector((state) => state.user.Rank);
+  const userInfo = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  console.log("userInfo", userInfo);
 
   const upgradePercent = [
     100, 100, 100, 100, 80, 70, 60, 50, 40, 30, 25, 15, 14, 13, 12, 7, 5, 4, 3,
@@ -21,7 +26,7 @@ function PlayGame() {
   ];
 
   const upgradeBtn = () => {
-    if (upgradeRank === 21) {
+    if (rank === 21) {
       alert("최대 수치에 도달하였습니다.");
       return;
     }
@@ -29,14 +34,14 @@ function PlayGame() {
     setTimeout(() => {
       let random_num = Math.floor(Math.random() * 101);
       setLoading(false);
-      if (random_num >= upgradePercent[upgradeRank] && upgradeRank >= 15) {
-        setUpgradeRank(upgradeRank - 1);
+      if (random_num >= upgradePercent[rank] && rank >= 15) {
+        dispatch(UPGRADE_FAIL());
         alert("강화 실패 (강화 수치가 한단계 내려갑니다)");
 
         return;
       }
-      if (random_num <= upgradePercent[upgradeRank]) {
-        setUpgradeRank(upgradeRank + 1);
+      if (random_num <= upgradePercent[rank]) {
+        dispatch(UPGRADE_SUCCESS());
         alert("강화 성공");
 
         return;
@@ -52,17 +57,17 @@ function PlayGame() {
     if (
       window.confirm(
         "현재 랭킹을 등록 하시겠습니까?\n닉네임 : " +
-          state.userNickName +
+          userInfo.NickName +
           "\n" +
           "강화 등급 : " +
-          upgradeRank +
+          rank +
           "강\n "
       )
     ) {
       try {
         const res = await addDoc(userCollectionRef, {
-          NickName: state.userNickName,
-          Ranking: upgradeRank,
+          NickName: userInfo.NickName,
+          Ranking: rank,
           Date: Date.now(),
         });
         alert("랭킹 등록 완료");
@@ -93,11 +98,11 @@ function PlayGame() {
               <span
                 style={{ color: "#b24189", fontWeight: "bold", fontSize: 30 }}
               >
-                {upgradeRank}
+                {rank}
               </span>
               강
             </div>
-            {upgradeRank >= 15 ? (
+            {rank >= 15 ? (
               <span style={{ marginTop: 15, color: "gray" }}>
                 실패시 강화 수치가 한단계 내려갑니다.
               </span>
