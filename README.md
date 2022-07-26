@@ -5,12 +5,12 @@
 ![](https://velog.velcdn.com/images/boyfromthewell/post/d2950e7a-1fec-4115-9852-bedf1189dcc5/image.png)
 
 CSS는 할생각 없었는데..........욕심이 화를 부릅니다
-꼴받게 향수를 자극하는 BGM도 깔려있다
+향수를 자극하는 BGM도 깔려있다
 
 ## 무기 선택창
 ![](https://velog.velcdn.com/images/boyfromthewell/post/1fc1ce07-1a89-4ad4-bb12-2d5c1b60ed31/image.png)
 
-꼴에 무기도 선택할수 있다.
+무기도 선택할수 있다.
 
 ## 시뮬레이터 플레이
 
@@ -20,7 +20,7 @@ CSS는 할생각 없었는데..........욕심이 화를 부릅니다
 
 ![](https://velog.velcdn.com/images/boyfromthewell/post/5964971e-8f27-4ec0-b8fb-c4b8239465bf/image.gif)
 
-꼴에 강화하는거 같은 효과도 주었다
+강화하는거 같은 효과도 주었다
 
 (새로고침 할 경우 강화수치가 당연히 다 날아간다 주의!!)
 
@@ -33,7 +33,7 @@ CSS는 할생각 없었는데..........욕심이 화를 부릅니다
 
 ## 랭킹 등록하기
 
-꼴에 랭킹등록 버튼을 누르면 랭킹등록도 가능하다
+랭킹등록 버튼을 누르면 랭킹등록도 가능하다
 
 ![](https://velog.velcdn.com/images/boyfromthewell/post/cc0bfe38-b031-4619-a70e-a7b9415585fe/image.png)
 
