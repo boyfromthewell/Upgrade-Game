@@ -4,7 +4,6 @@
 ## 초기화면
 ![](https://velog.velcdn.com/images/boyfromthewell/post/d2950e7a-1fec-4115-9852-bedf1189dcc5/image.png)
 
-CSS는 할생각 없었는데..........욕심이 화를 부릅니다
 향수를 자극하는 BGM도 깔려있다
 
 ## 무기 선택창
